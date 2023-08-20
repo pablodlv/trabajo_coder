@@ -3,8 +3,19 @@
 {% load static %}
 
 {% block contenido_hero %} 
-<div class="masthead-subheading">Sistema</div>
+<div class="masthead-subheading">Consulta</div>
 <div class="masthead-heading text-uppercase">Licitaciones</div>
-<div class="masthead-subheading">Buscá la licitación</div>
-<a class="btn btn-info btn-xl text-uppercase" href="#services">Licitaciones</a>
+<div class="masthead-subheading">Buscá la licitación o cargá una nueva</div>
+{% endblock %}
+
+{% block listado %} 
+
+<h2>Listado de licitaciones</h2>
+<ul>
+    {% for licitacion in listado_licitaciones %}
+        <li>{{ licitacion.objeto }} - {{ licitacion.referencia }} - {{ licitacion.fecha }} - {{ licitacion.link }}</li>
+    {% endfor %}
+</ul>
+<br>
+<a class="btn btn-success btn-xl text-uppercase" href="{% url 'carga_licitaciones' %}">Cargar Licitación</a>
 {% endblock %}

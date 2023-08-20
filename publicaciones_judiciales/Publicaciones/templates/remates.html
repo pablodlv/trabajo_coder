@@ -3,8 +3,18 @@
 {% load static %}
 
 {% block contenido_hero %} 
-<div class="masthead-subheading">Sistema</div>
+<div class="masthead-subheading">Consulta</div>
 <div class="masthead-heading text-uppercase">Remates</div>
-<div class="masthead-subheading">Cargá o buscá el remate</div>
-<a class="btn btn-success btn-xl text-uppercase" href="#services">Remates</a>
+<div class="masthead-subheading">Buscá el remate en el listado o cargá uno nuevo</div>
+
+{% endblock %}
+
+{% block listado %} 
+<ul>
+    {% for remate in listado_remates %}
+        <li>{{ remate.bien }} - ${{ remate.base }} - {{ remate.fecha }} - {{ remate.lugar }}</li>
+    {% endfor %}
+</ul>
+<br>
+<a class="btn btn-success btn-xl text-uppercase" href="{% url 'carga_remates' %}">Cargar Remate</a>
 {% endblock %}

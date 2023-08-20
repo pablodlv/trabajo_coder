@@ -1,0 +1,26 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenido_hero %} 
+<div class="masthead-subheading">Carga</div>
+<div class="masthead-heading text-uppercase">Remates</div>
+<div class="masthead-subheading">Modificá o cargá el remate</div>
+
+{% endblock %}
+
+{% block listado %}
+<h2>Listado de remates</h2> 
+<br>
+<form action="{% url 'carga_remates' %}" method="post"> {% csrf_token %}
+    <input type="text" name="bien" id="bien" placeholder="Agregá el bien a rematar">
+    <input type="text" name="base" id="base" placeholder="Agregá la base del remate">
+    <input type="date" name="fecha" id="fecha" placeholder="Agregá la fecha dedel remate">
+    <input type="text" name="lugar" id="lugar" placeholder="Agregá el lugar del remate">
+    <input type="submit" value="Guardar remate">
+
+</form>
+<br>
+<h3>{{ mensaje }}</h3>
+<a class="btn btn-warning btn-xl text-uppercase" href="{% url 'remates' %}">Volver a la vista de Remates</a>
+{% endblock %}

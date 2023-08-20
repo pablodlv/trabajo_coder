@@ -6,9 +6,19 @@
 <div class="masthead-subheading">Sistema</div>
 <div class="masthead-heading text-uppercase">Operadores</div>
 <div class="masthead-subheading">Elegí el listado a cargar o modificar</div>
-<a class="btn btn-success btn-xl text-uppercase" href="#services">Remates</a>
-<a class="btn btn-info btn-xl text-uppercase" href="#services">Licitaciones</a>
-<a class="btn btn-warning btn-xl text-uppercase" href="#services">Martilleros</a>
-<a class="btn btn-danger btn-xl text-uppercase" href="#services">Clientes</a>
-<a class="btn btn-secondary btn-xl text-uppercase" href="#services">Operadores</a>
+<a class="btn btn-success btn-xl text-uppercase" href="{% url 'remates' %}">Remates</a>
+<a class="btn btn-info btn-xl text-uppercase" href="{% url 'licitaciones' %}">Licitaciones</a>
+<a class="btn btn-warning btn-xl text-uppercase" href="{% url 'martilleros' %}">Martilleros</a>
+<a class="btn btn-danger btn-xl text-uppercase" href="{% url 'clientes' %}">Clientes</a>
+{% endblock %}
+
+{% block listado %} 
+
+<h2>Listado de operadores</h2>
+<ul>
+    {% for operador in listado_operadores %}
+        <li>{{ operador.nombre }} - {{ operador.apellido }} - {{ operador.email }}</li>
+    {% endfor %}
+</ul>
+
 {% endblock %}

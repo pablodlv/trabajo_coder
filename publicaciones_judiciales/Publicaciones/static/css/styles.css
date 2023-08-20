@@ -10838,7 +10838,7 @@ p {
 }
 
 .page-section {
-  padding: 6rem 0;
+  padding: 2rem 0;
 }
 .page-section h2.section-heading, .page-section .section-heading.h2 {
   font-size: 2.5rem;
@@ -10943,8 +10943,8 @@ p {
   }
 }
 header.masthead {
-  padding-top: 6.5rem;
-  padding-bottom: 6rem;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
   text-align: center;
   color: #fff;
   background-image: url("../assets/img/header-bg.jpg");
@@ -10970,8 +10970,8 @@ header.masthead .masthead-heading {
 
 @media (min-width: 768px) {
   header.masthead {
-    padding-top: 10rem;
-    padding-bottom: 12.5rem;
+    padding-top: 8rem;
+    padding-bottom: 9rem;
   }
   header.masthead .masthead-subheading {
     font-size: 2.25rem;
