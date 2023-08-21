@@ -19,4 +19,5 @@
         <li>{{ cliente.nombre }} - {{ cliente.apellido }} - {{ cliente.numero_de_cliente }} - {{ cliente.email }}</li>
     {% endfor %}
 </ul>
+<a class="btn btn-success btn-xl text-uppercase" href="{% url 'carga_clientes' %}">Cargar cliente</a>
 {% endblock %}

@@ -3,14 +3,13 @@
 {% load static %}
 
 {% block contenido_hero %} 
-<div class="masthead-subheading">Carga</div>
+<div class="masthead-subheading">Sistema</div>
 <div class="masthead-heading text-uppercase">Remates</div>
 <div class="masthead-subheading">Modificá o cargá el remate</div>
 
 {% endblock %}
 
 {% block listado %}
-<h2>Listado de remates</h2> 
 <br>
 <form action="{% url 'carga_remates' %}" method="post"> {% csrf_token %}
     <input type="text" name="bien" id="bien" placeholder="Agregá el bien a rematar">

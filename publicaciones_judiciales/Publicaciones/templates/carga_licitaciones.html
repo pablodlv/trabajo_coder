@@ -3,14 +3,12 @@
 {% load static %}
 
 {% block contenido_hero %} 
-<div class="masthead-subheading">Carga</div>
+<div class="masthead-subheading">Sistema</div>
 <div class="masthead-heading text-uppercase">Licitaciones</div>
 <div class="masthead-subheading">Modificá o cargá la licitación</div>
 {% endblock %}
 
 {% block listado %} 
-
-<h2>Listado de licitaciones</h2>
 <br>
 <form action="{% url 'carga_licitaciones' %}" method="post"> {% csrf_token %}
     <input type="text" name="objeto" id="objeto" placeholder="Agregá objeto a licitar">

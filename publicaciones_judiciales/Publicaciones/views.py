@@ -37,9 +37,9 @@ def cargar_rema(request):
         lugar=request.POST['lugar']
         remate=Remate(bien=bien,base=base,fecha=fecha,lugar=lugar)
         remate.save()
-        return render(request,'remates_formulario.html', {'mensaje':'Remate creado'})
+        return render(request,'carga_remates.html', {'mensaje':'Remate creado'})
     else:
-        return render(request,'remates_formulario.html')
+        return render(request,'carga_remates.html')
 
 def cargar_lic(request):
     if request.method=='POST':
@@ -49,14 +49,22 @@ def cargar_lic(request):
         link=request.POST['link']
         licitacion=Licitacion(objeto=objeto,referencia=referencia,fecha=fecha,link=link)
         licitacion.save()
-        return render(request,'licitaciones_formulario.html', {'mensaje':'Licitación creada'})
+        return render(request,'carga_licitaciones.html', {'mensaje':'Licitación creada'})
     else:
-        return render(request,'licitaciones_formulario.html')
+        return render(request,'carga_licitaciones.html')
     
 def cargar_mart(request):
     if request.method=='POST':
         martillero=Martillero(request.POST['nombre'],(request.POST['apellido'],(request.POST['matricula'],(request.POST['email']))))
         martillero.save()
-        return render(request, "martilleros.html", {'mensaje':'Martillero cargado'})
+        return render(request, "carga_martilleros.html", {'mensaje':'Martillero cargado'})
     else:
-        return render(request,"martilleros.html")
+        return render(request,"carga_martilleros.html")
+
+def cargar_cli(request):
+    if request.method=='POST':
+        cliente=Cliente(request.POST['nombre'],(request.POST['apellido'],(request.POST['numero_de_cliente'],(request.POST['email']))))
+        cliente.save()
+        return render(request, "carga_clientes.html", {'mensaje':'Cliente cargado'})
+    else:
+        return render(request,"carga_clientes.html")

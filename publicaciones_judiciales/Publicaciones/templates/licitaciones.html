@@ -11,6 +11,7 @@
 {% block listado %} 
 
 <h2>Listado de licitaciones</h2>
+<br>
 <ul>
     {% for licitacion in listado_licitaciones %}
         <li>{{ licitacion.objeto }} - {{ licitacion.referencia }} - {{ licitacion.fecha }} - {{ licitacion.link }}</li>

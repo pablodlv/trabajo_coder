@@ -10,6 +10,8 @@
 {% endblock %}
 
 {% block listado %} 
+<h2>Listado de licitaciones</h2>
+<br>
 <ul>
     {% for remate in listado_remates %}
         <li>{{ remate.bien }} - ${{ remate.base }} - {{ remate.fecha }} - {{ remate.lugar }}</li>
