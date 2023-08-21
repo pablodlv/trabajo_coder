@@ -9,4 +9,5 @@ urlpatterns = [
     path('operadores/', operadores, name='operadores'),
     path('remates_formulario/', cargar_rema, name='carga_remates'),
     path('licitaciones_formulario/', cargar_lic, name='carga_licitaciones'),
+    path('carga_martilleros/', cargar_mart, name='carga_martilleros'),
 ]

@@ -7,3 +7,16 @@
 <div class="masthead-heading text-uppercase">Martilleros</div>
 <div class="masthead-subheading">Consultá el listado de martilleros</div>
 {% endblock %}
+
+{% block listado %} 
+
+<h2>Listado de martilleros habilitados</h2>
+<ul>
+    {% for martillero in listado_martilleros %}
+        <li>{{ martillero.nombre }} - {{ martillero.apellido }} - {{ martillero.matricula }} - {{ martillero.email }}</li>
+    {% endfor %}
+</ul>
+<br>
+<br>
+<a class="btn btn-success btn-xl text-uppercase" href="{% url 'carga_martilleros' %}">Cargar martillero</a>
+{% endblock %}

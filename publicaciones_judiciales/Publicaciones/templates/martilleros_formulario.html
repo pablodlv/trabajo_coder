@@ -1,0 +1,31 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenido_hero %} 
+<div class="masthead-subheading">Carga</div>
+<div class="masthead-heading text-uppercase">Martilleros</div>
+<div class="masthead-subheading">Cargá el martillero</div>
+
+{% endblock %}
+
+{% block listado %}
+<h2>Listado de martilleros habilitados</h2>
+<ul>
+    {% for martillero in listado_martilleros %}
+        <li>{{ martillero.nombre }} - {{ martillero.apellido }} - {{ martillero.matricula }} - {{ martillero.email }}</li>
+    {% endfor %}
+</ul>
+<br>
+<form action="{% url 'carga_martilleros' %}" method="post"> {% csrf_token %}
+    <input type="text" name="nombre" id="nombre" placeholder="Agregá nombre">
+    <input type="text" name="apellido" id="apellido" placeholder="Agregá el apellido">
+    <input type="number" name="matricula" id="matricula" placeholder="Agregá la matricula">
+    <input type="EmailField" name="email" id="email" placeholder="Agregá el mail">
+    <input type="submit" value="Cargar martillero">
+
+</form>
+<br>
+<h3>{{ mensaje }}</h3>
+<a class="btn btn-warning btn-xl text-uppercase" href="{% url 'martilleros' %}">Volver a la vista de Martilleros</a>
+{% endblock %}

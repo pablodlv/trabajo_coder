@@ -20,10 +20,12 @@ def operadores(request):
     return render(request,'operadores.html', {'listado_operadores':lista_operadores})
 
 def martilleros(request):
-    return render(request,'martilleros.html')
+    lista_martilleros=Licitacion.objects.all()
+    return render(request,'martilleros.html', {'listado_martilleros':lista_martilleros})
 
 def clientes(request):
-   return render(request,'clientes.html')
+   lista_clientes=Cliente.objects.all()
+   return render(request,'clientes.html', {'listado_clientes':lista_clientes})
 
 # Crud 
 
@@ -50,3 +52,11 @@ def cargar_lic(request):
         return render(request,'licitaciones_formulario.html', {'mensaje':'Licitación creada'})
     else:
         return render(request,'licitaciones_formulario.html')
+    
+def cargar_mart(request):
+    if request.method=='POST':
+        martillero=Martillero(request.POST['nombre'],(request.POST['apellido'],(request.POST['matricula'],(request.POST['email']))))
+        martillero.save()
+        return render(request, "martilleros.html", {'mensaje':'Martillero cargado'})
+    else:
+        return render(request,"martilleros.html")

@@ -10,3 +10,13 @@
 <a class="btn btn-info btn-xl text-uppercase" href="{% url 'licitaciones' %}">Licitaciones</a>
 <a class="btn btn-warning btn-xl text-uppercase" href="{% url 'martilleros' %}">Martilleros</a>
 {% endblock %}
+
+{% block listado %} 
+
+<h2>Listado de clientes</h2>
+<ul>
+    {% for cliente in listado_clientes %}
+        <li>{{ cliente.nombre }} - {{ cliente.apellido }} - {{ cliente.numero_de_cliente }} - {{ cliente.email }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
