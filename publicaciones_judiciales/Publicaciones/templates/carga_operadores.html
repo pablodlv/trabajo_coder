@@ -1,0 +1,26 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenido_hero %} 
+<div class="masthead-subheading">Sistema</div>
+<div class="masthead-heading text-uppercase">Operadores</div>
+<div class="masthead-subheading">Modificá o cargá operadores</div>
+
+{% endblock %}
+
+{% block listado %}
+<br>
+    <form action="{% url 'carga_operadores' %}" method="POST"> {% csrf_token %}
+        <table>
+
+            {{ formulario.as_p }}
+            
+        </table>
+        <input type="submit" value="Guardar operador">
+
+    </form>
+<br>
+<h3>{{ mensaje }}</h3>
+<a class="btn btn-warning btn-xl text-uppercase" href="{% url 'operadores' %}">Volver a operadores</a>
+{% endblock %}

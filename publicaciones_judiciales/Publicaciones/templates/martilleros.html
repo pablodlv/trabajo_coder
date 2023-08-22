@@ -13,10 +13,10 @@
 <h2>Listado de martilleros habilitados</h2>
 <ul>
     {% for martillero in listado_martilleros %}
-        <li>{{ martillero.nombre }} - {{ martillero.apellido }} - {{ martillero.matricula }} - {{ martillero.email }}</li>
+        <li>{{ martillero.nombre }} {{ martillero.apellido }} - {{ martillero.matricula }} - {{ martillero.email }}</li>
     {% endfor %}
 </ul>
 <br>
 <br>
-<a class="btn btn-success btn-xl text-uppercase" href="{% url 'carga_martilleros' %}">Cargar martillero</a>
+<a class="btn btn-warning btn-xl text-uppercase" href="{% url 'carga_martilleros' %}">Cargar martillero</a>
 {% endblock %}

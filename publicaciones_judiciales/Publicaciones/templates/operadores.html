@@ -5,20 +5,23 @@
 {% block contenido_hero %} 
 <div class="masthead-subheading">Sistema</div>
 <div class="masthead-heading text-uppercase">Operadores</div>
-<div class="masthead-subheading">Elegí el listado a cargar o modificar</div>
+<div class="masthead-subheading">Modificá o cargá alguno de los listados</div>
 <a class="btn btn-success btn-xl text-uppercase" href="{% url 'remates' %}">Remates</a>
 <a class="btn btn-info btn-xl text-uppercase" href="{% url 'licitaciones' %}">Licitaciones</a>
 <a class="btn btn-warning btn-xl text-uppercase" href="{% url 'martilleros' %}">Martilleros</a>
 <a class="btn btn-danger btn-xl text-uppercase" href="{% url 'clientes' %}">Clientes</a>
+
 {% endblock %}
 
-{% block listado %} 
-
+{% block listado %}
 <h2>Listado de operadores</h2>
+<br>
 <ul>
     {% for operador in listado_operadores %}
-        <li>{{ operador.nombre }} - {{ operador.apellido }} - {{ operador.email }}</li>
+        <li>{{ operador.nombre }} {{ operador.apellido }} - {{ operador.email }}</li>
     {% endfor %}
 </ul>
-
+<br>
+<br>
+<a class="btn btn-success btn-xl text-uppercase" href="{% url 'carga_operadores' %}">Cargar operador</a>
 {% endblock %}

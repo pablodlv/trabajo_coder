@@ -10,15 +10,16 @@
 
 {% block listado %} 
 <br>
-<form action="{% url 'carga_licitaciones' %}" method="post"> {% csrf_token %}
-    <input type="text" name="objeto" id="objeto" placeholder="Agregá objeto a licitar">
-    <input type="text" name="referencia" id="referencia" placeholder="Agregá el código de referencia">
-    <input type="date" name="fecha" id="fecha" placeholder="Agregá la fecha de presentación">
-    <input type="URLField" name="link" id="link" placeholder="Agregá un link de presentación">
+<form action="{% url 'carga_licitaciones' %}" method="POST"> {% csrf_token %}
+    <table>
+
+        {{ formulario.as_p }}
+        
+    </table>
     <input type="submit" value="Guardar licitación">
 
 </form>
 <br>
 <h3>{{ mensaje }}</h3>
-<a class="btn btn-warning btn-xl text-uppercase" href="{% url 'licitaciones' %}">Volver a la vista de Licitaciones</a>
+<a class="btn btn-warning btn-xl text-uppercase" href="{% url 'licitaciones' %}">Volver a Licitaciones</a>
 {% endblock %}
