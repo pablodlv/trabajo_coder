@@ -15,6 +15,7 @@
 {% block listado %} 
 
 <h2>Listado de clientes</h2>
+<br>
 <ul>
     {% for cliente in listado_clientes %}
         <li>{{ cliente.nombre }} {{ cliente.apellido }} - {{ cliente.numero_de_cliente }} - {{ cliente.email }}</li>
